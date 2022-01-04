@@ -8,10 +8,10 @@ final dummyItems = [
   'https://images.unsplash.com/photo-1593642532454-e138e28a63f4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80',
 ];
 
-void main() => runApp(const MyApp());
+void main() => runApp(const TutorialApps());
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+class TutorialApps extends StatelessWidget {
+  const TutorialApps({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -20,18 +20,18 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: const MyHomePage());
+        home: const PracticeUIApp());
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key}) : super(key: key);
+class PracticeUIApp extends StatefulWidget {
+  const PracticeUIApp({Key? key}) : super(key: key);
 
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  _PracticeUIAppPageState createState() => _PracticeUIAppPageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _PracticeUIAppPageState extends State<PracticeUIApp> {
   var _index = 0;
   // var _pages = [
   //   Page1(),
