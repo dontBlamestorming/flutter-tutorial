@@ -79,16 +79,16 @@ class PracticeUIPage extends StatefulWidget {
 class _PracticeUIPageState extends State<PracticeUIPage> {
   var _index = 0;
   // var _pages = [
-  //   Page1(),
-  //   Page2(),
-  //   Page3(),
+  //   TexiListWidget(),
+  //   SliderWidget(),
+  //   NotificationWidget(),
   // ];
   final _pages = [
     // what's diff with above code
 
-    const Page1(), // Text list
-    const Page2(), // Slider
-    const Page3(), // Notifications
+    const TexiListWidget(), // Text list
+    const SliderWidget(), // Slider
+    const NotificationWidget(), // Notifications
   ];
 
   @override
@@ -99,8 +99,8 @@ class _PracticeUIPageState extends State<PracticeUIPage> {
   }
 }
 
-class Page1 extends StatelessWidget {
-  const Page1({Key? key}) : super(key: key);
+class TexiListWidget extends StatelessWidget {
+  const TexiListWidget({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -261,8 +261,8 @@ class Page1 extends StatelessWidget {
   }
 }
 
-class Page2 extends StatelessWidget {
-  const Page2({Key? key}) : super(key: key);
+class SliderWidget extends StatelessWidget {
+  const SliderWidget({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -275,8 +275,8 @@ class Page2 extends StatelessWidget {
   }
 }
 
-class Page3 extends StatelessWidget {
-  const Page3({Key? key}) : super(key: key);
+class NotificationWidget extends StatelessWidget {
+  const NotificationWidget({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
