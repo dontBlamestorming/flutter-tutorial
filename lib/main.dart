@@ -42,14 +42,14 @@ class _HomeState extends State<Home> {
   }
 }
 
-class PracticeUIApp extends StatefulWidget {
-  const PracticeUIApp({Key? key}) : super(key: key);
+class PracticeUIPage extends StatefulWidget {
+  const PracticeUIPage({Key? key}) : super(key: key);
 
   @override
-  _PracticeUIAppPageState createState() => _PracticeUIAppPageState();
+  _PracticeUIPageState createState() => _PracticeUIPageState();
 }
 
-class _PracticeUIAppPageState extends State<PracticeUIApp> {
+class _PracticeUIPageState extends State<PracticeUIPage> {
   var _index = 0;
   // var _pages = [
   //   Page1(),
