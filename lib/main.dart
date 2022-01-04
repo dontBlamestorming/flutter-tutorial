@@ -32,11 +32,38 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  var index = 0;
+  final pages = [
+    // ui practice, app, app, ...
+    const PracticeUIPage(),
+  ];
+
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Center(
-        child: Text("Home Page"),
+    return Scaffold(
+      appBar: AppBar(),
+      body: pages[index],
+      bottomNavigationBar: BottomNavigationBar(
+        unselectedItemColor: Colors.black,
+        selectedItemColor: Colors.green,
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'UI',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: '비만도측정',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: '테스트',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: '할일 관리',
+          )
+        ],
       ),
     );
   }
@@ -59,50 +86,15 @@ class _PracticeUIPageState extends State<PracticeUIPage> {
   final _pages = [
     // what's diff with above code
 
-    const Page1(),
-    const Page2(),
-    const Page3(),
+    const Page1(), // Text list
+    const Page2(), // Slider
+    const Page3(), // Notifications
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        actions: [
-          IconButton(
-            onPressed: () {},
-            icon: Icon(Icons.add, color: Colors.black),
-          )
-        ],
-        backgroundColor: Colors.white,
-        title: const Text(
-          "복잡한 UI",
-          style: TextStyle(color: Colors.black),
-        ),
-        centerTitle: true,
-      ),
       body: _pages[_index],
-      bottomNavigationBar: BottomNavigationBar(
-        onTap: (index) {
-          setState(() {
-            _index = index;
-          });
-        },
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: '홈',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.assignment),
-            label: '이용서비스',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.account_circle),
-            label: '내 정보',
-          ),
-        ],
-      ),
     );
   }
 }
