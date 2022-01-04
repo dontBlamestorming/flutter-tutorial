@@ -36,16 +36,25 @@ class _HomeState extends State<Home> {
   final pages = [
     // ui practice, app, app, ...
     const PracticeUIPage(),
+    const OverweightCalculatorPage(),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: Text("Flutter Totorials"),
+      ),
       body: pages[index],
       bottomNavigationBar: BottomNavigationBar(
         unselectedItemColor: Colors.black,
         selectedItemColor: Colors.green,
+        onTap: (i) {
+          setState(() {
+            index = i;
+          });
+        },
+        currentIndex: index,
         items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
@@ -69,6 +78,23 @@ class _HomeState extends State<Home> {
   }
 }
 
+class OverweightCalculatorPage extends StatefulWidget {
+  const OverweightCalculatorPage({Key? key}) : super(key: key);
+
+  @override
+  _OverweightCalculatorPageState createState() =>
+      _OverweightCalculatorPageState();
+}
+
+class _OverweightCalculatorPageState extends State<OverweightCalculatorPage> {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Text("overweight page"),
+    );
+  }
+}
+
 class PracticeUIPage extends StatefulWidget {
   const PracticeUIPage({Key? key}) : super(key: key);
 
@@ -78,17 +104,10 @@ class PracticeUIPage extends StatefulWidget {
 
 class _PracticeUIPageState extends State<PracticeUIPage> {
   var _index = 0;
-  // var _pages = [
-  //   TexiListWidget(),
-  //   SliderWidget(),
-  //   NotificationWidget(),
-  // ];
   final _pages = [
-    // what's diff with above code
-
-    const TexiListWidget(), // Text list
-    const SliderWidget(), // Slider
-    const NotificationWidget(), // Notifications
+    const TexiListWidget(),
+    const SliderWidget(),
+    const NotificationWidget(),
   ];
 
   @override
@@ -113,7 +132,6 @@ class TexiListWidget extends StatelessWidget {
     );
   }
 
-  // Q - 왜 string도 const를 붙어야 하는지? list, map, set 자료형이 아닌데?
   Widget _buildTop() {
     return Padding(
       padding: const EdgeInsets.only(
