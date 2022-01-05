@@ -1,6 +1,8 @@
-// import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+
+import 'screens/practice_layout.dart';
+import 'screens/overweight_calculator.dart';
 
 final dummyItems = [
   'https://images.unsplash.com/photo-1593642532454-e138e28a63f4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80',
@@ -16,11 +18,12 @@ class TutorialApps extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'Flutter Demo',
-        theme: ThemeData(
-          primarySwatch: Colors.blue,
-        ),
-        home: const Home());
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: const Home(),
+    );
   }
 }
 
@@ -36,7 +39,7 @@ class _HomeState extends State<Home> {
   final pages = [
     // ui practice, app, app, ...
     const PracticeUIPage(),
-    const OverweightCalculatorPage(),
+    const OverweightCalculator(),
   ];
 
   @override
@@ -74,23 +77,6 @@ class _HomeState extends State<Home> {
           )
         ],
       ),
-    );
-  }
-}
-
-class OverweightCalculatorPage extends StatefulWidget {
-  const OverweightCalculatorPage({Key? key}) : super(key: key);
-
-  @override
-  _OverweightCalculatorPageState createState() =>
-      _OverweightCalculatorPageState();
-}
-
-class _OverweightCalculatorPageState extends State<OverweightCalculatorPage> {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      child: Text("overweight page"),
     );
   }
 }
